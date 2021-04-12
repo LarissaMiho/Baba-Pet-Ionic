@@ -7,7 +7,7 @@ import { UtilService } from './services/util.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  tipoUsuario = 2;
+  tipoUsuario = 1;
 
   public appPages = [
     { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
@@ -19,16 +19,16 @@ export class AppComponent {
   ];
 
   public appPagesBaba = [
-    { title: 'Lista de Pedidos', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Editar Perfil', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Sair', url: '/folder/Inbox', icon: 'mail' },
+    { title: 'Lista de Pedidos', url: '/lista', icon: 'mail' },
+    { title: 'Editar Perfil', url: '/editar', icon: 'mail' },
+    { title: 'Sair', url: '/cadastro', icon: 'mail' },
   ];
 
   public appPagesProcurador = [
-    { title: 'Mapa Babá', url: '/folder/Inbox', icon: 'mail' },
+    { title: 'Mapa Babá', url: '/lista', icon: 'mail' },
     { title: 'Contato das Babás', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Editar Perfil', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Sair', url: '/folder/Inbox', icon: 'mail' },
+    { title: 'Editar Perfil', url: '/editar', icon: 'mail' },
+    { title: 'Sair', url: '/cadastro', icon: 'mail' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor(private router: Router, private utilService: UtilService) {

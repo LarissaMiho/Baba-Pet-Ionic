@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { UtilService } from './../services/util.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatoPage implements OnInit {
 
-  constructor() { }
+  usuarioLogado: any;
+
+  constructor(private utilService: UtilService, private router: Router) { }
 
   ngOnInit() {
+    this.usuarioLogado = this.utilService.getUsuarioLogado();
+  }
+
+  irParaLista(){
+    this.router.navigate(["/lista"])
   }
 
 }

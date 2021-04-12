@@ -5,5 +5,42 @@
 </ion-header>
 
 <ion-content>
+  <div class="cadastro-wrapper">
+    <div id="procurar-baba-pet" *ngIf="usuarioLogado.tipoUsuario == 1">
+      <br>
+      <ion-label class="font-color ">Nome: Leonardo</ion-label><br><br>
+      <ion-label class="font-color ">Tipo: Pássaro</ion-label><br><br>
+      <ion-label class="font-color ">Raça: Poodle</ion-label><br><br>
+      <ion-label class="font-color ">Data Nascimento: 00/00/0000</ion-label><br><br>
+      <ion-label class="font-color ">Características: Pássaro</ion-label><br><br>
+      <ion-label class="font-color ">Observações: Pássaro</ion-label><br><br>
+
+      <div class="div-wrapper-choose-options">
+        <div class="text-center">
+          <ion-label class="font-color" style="line-height: 60px;" (click)="irParaLista();">Recusar</ion-label>
+        </div>
+      </div>
+      <div class="div-wrapper-choose-options">
+        <div class="text-center">
+          <ion-label class="font-color" style="line-height: 60px;" (click)="irParaLista();">Aceitar</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <div id="procurar-baba-pet" *ngIf="usuarioLogado.tipoUsuario == 2">
+      <br>
+      <ion-label class="font-color ">Nome: Maria Braga</ion-label><br><br>
+      <ion-label class="font-color ">Preço: Pássaro</ion-label><br><br>
+      <ion-label class="font-color ">Data Nascimento: Poodle</ion-label><br><br>
+      <ion-label class="font-color ">Tempo Disponível: 00/00/0000</ion-label><br><br>
+      <ion-label class="font-color ">Local: Pássaro</ion-label><br><br>
+
+      <div class="div-wrapper-choose-options">
+        <div class="text-center">
+          <ion-label class="font-color" style="line-height: 60px;" (click)="irParaLista();">Contatar</ion-label>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </ion-content>
