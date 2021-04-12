@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [style.background-color]="contentColor">
+<ion-content>
   <div class="cadastro-wrapper">
     <div *ngIf="!isCadastro">
       <div class="text-center" style="padding-top: 50%;">
@@ -25,10 +25,70 @@
     </div>
     <div *ngIf="isCadastro">
       <div id="ser-baba-pet" *ngIf="tipoUsuario == 1">
-        cadastrar baba pet
+        <ion-label class="font-color ">Cadastrar sua Conta no Babá Pet como Babá</ion-label>
+        <ion-item>
+          <ion-label position="stacked">Nome</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Data de Nascimento</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Contato</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Tempo Disponível</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Descreva o local que os acolherá</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Descrição dos Preços</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+        <div id="login" class="d-flex-vincular">
+          <ion-icon name="logo-facebook" class="wrapper icon fb"></ion-icon>
+          <ion-icon name="logo-instagram" class="wrapper icon insta"></ion-icon>
+        </div>
+
+
       </div>
+
       <div id="procurar-baba-pet" *ngIf="tipoUsuario == 2">
-        procurar baba pet
+        <ion-label class="font-color ">Cadastrar sua Conta no Babá Pet para encontrar uma Babá</ion-label>
+        <ion-item>
+          <ion-label position="stacked">Nome</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-label class="font-color ">Preencha com as informações de seu Pet</ion-label>
+        <ion-item>
+          <ion-label position="stacked">Tipo</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Raça</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Data de Nascimento</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Como ele é?</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Observações</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+        <div id="login" class="d-flex-vincular">
+          <ion-icon name="logo-facebook" class="wrapper icon fb"></ion-icon>
+          <ion-icon name="logo-instagram" class="wrapper icon insta"></ion-icon>
+        </div>
       </div>
     </div>
   </div>

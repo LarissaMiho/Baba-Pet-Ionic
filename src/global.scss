@@ -35,7 +35,7 @@
 }
 
 ion-content{
-    --ion-background-color:#fae5b0;
+    /*--ion-background-color:#fae5b0;*/
 }
 
 .footer{
@@ -44,11 +44,17 @@ ion-content{
 }
 
 .bg-color{
-    background-color: #fae5b0;
+    /*background-color: #fae5b0;*/
 }
 
 .d-flex-login {
     margin-top: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.d-flex-vincular {
+    margin-top: 10%;
     display: flex;
     flex-flow: row nowrap;
 }
@@ -74,9 +80,12 @@ ion-content{
     color: #bd33b3;
     text-align: left;
 }
+.wrapper-color{
+    /*background-color: #ecbd78;*/
+}
 
 .font-color {
-    color: #523a1e;
+    color:white;
 }
 
 .text-bolder{

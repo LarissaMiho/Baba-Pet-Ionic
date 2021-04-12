@@ -29,7 +29,7 @@ export class UtilService {
   }
 
   getToolbarColor() {
-    return "#e1832c";
+    return "#363636";
   }
 
   getContentColor() {
