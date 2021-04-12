@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="cadastro-wrapper">
+
+    <div id="procurar-baba-pet" *ngIf="usuarioLogado.tipoUsuario == 1">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="./avatar-finn.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>Dono: Leonardo</h2>
+          <h3>Pássaro</h3>
+          <p>Coruja</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="./avatar-finn.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>Dono: Elizabeth</h2>
+          <h3>Cachorro</h3>
+          <p>Poodle</p>
+        </ion-label>
+      </ion-item>
+    </div>
+
+
+    <div id="procurar-baba-pet" *ngIf="usuarioLogado.tipoUsuario == 2">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="./avatar-finn.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>Lucas Henrique</h2>
+          <p>Seg à sex - o dia todo</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="./avatar-finn.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>Maria Braga</h2>
+          <p>Seg à qui e Sab - o dia todo </p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>

@@ -18,10 +18,15 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'lista',
+    loadChildren: () => import('./lista/lista.module').then( m => m.ListaPageModule)
   },  {
-    path: 'lista-pedidos',
-    loadChildren: () => import('./lista-pedidos/lista-pedidos.module').then( m => m.ListaPedidosPageModule)
+    path: 'contato',
+    loadChildren: () => import('./contato/contato.module').then( m => m.ContatoPageModule)
   }
+
 
 ];
 
