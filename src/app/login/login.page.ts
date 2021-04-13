@@ -19,4 +19,8 @@ export class LoginPage implements OnInit {
     this.router.navigate(["/cadastro"])
   }
 
+  irParaTermosServicos(){
+    this.router.navigate(["/termos-servicos"])
+  }
+
 }

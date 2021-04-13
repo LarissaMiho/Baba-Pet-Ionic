@@ -29,6 +29,14 @@ const routes: Routes = [
   {
     path: 'editar',
     loadChildren: () => import('./editar/editar.module').then( m => m.EditarPageModule)
+  },
+  {
+    path: 'todos-contatos',
+    loadChildren: () => import('./todos-contatos/todos-contatos.module').then( m => m.TodosContatosPageModule)
+  },
+  {
+    path: 'termos-servicos',
+    loadChildren: () => import('./termos-servicos/termos-servicos.module').then( m => m.TermosServicosPageModule)
   }
 
 
