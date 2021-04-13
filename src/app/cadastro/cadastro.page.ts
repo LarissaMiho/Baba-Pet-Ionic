@@ -1,3 +1,4 @@
+import { UsuarioService } from './../services/usuario.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { UtilService } from '../services/util.service';
@@ -12,7 +13,8 @@ export class CadastroPage implements OnInit {
   isCadastro = false;
   tipoUsuario = 0;
   usuario: any;
-  constructor(private utilService: UtilService,  private router: Router) { }
+  constructor(private utilService: UtilService,  private router: Router, 
+    private usuarioService: UsuarioService) { }
 
   ngOnInit() {
   }
@@ -46,6 +48,7 @@ export class CadastroPage implements OnInit {
 
   irParaLista(){
     this.usuario.tipoUsuario = this.tipoUsuario;
+    this.usuarioService.insert(this.usuario);
     this.utilService.setUsuarioLogado(this.usuario);
     this.router.navigate(["/lista"])
   }

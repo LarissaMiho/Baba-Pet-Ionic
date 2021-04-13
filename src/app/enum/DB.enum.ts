@@ -1,3 +1,4 @@
 export enum DB {
-    USUARIO = "usuario"
+    USUARIO = "usuario",
+    ANIMAL = "animal"
 }
