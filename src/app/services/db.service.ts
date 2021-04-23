@@ -13,6 +13,7 @@ export class DbService {
   insert(obj: any, dbName: DB) {
     this.db.list(dbName.toString()).push(obj)
       .then((result: any) => {
+        localStorage.setItem("key", result.key)
       });
   }
 

@@ -7,7 +7,7 @@ import { UtilService } from './services/util.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  tipoUsuario = 0;
+  tipoUsuario = 1  ;
 
   public appPages = [
    // { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },

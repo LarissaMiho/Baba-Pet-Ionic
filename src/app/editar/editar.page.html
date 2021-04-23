@@ -7,7 +7,7 @@
 <ion-content>
   <div class="cadastro-wrapper">
 
-    <div id="ser-baba-pet" *ngIf="usuario.tipoUsuario == 1">
+    <div id="ser-baba-pet" *ngIf="usuario != undefined && usuario.tipoUsuario == 1">
       <ion-label class="font-color ">Cadastrar sua Conta no Babá Pet como Babá</ion-label>
       <ion-item>
         <ion-label position="stacked">Nome</ion-label>
@@ -35,7 +35,7 @@
       </ion-item>
       <div class="div-wrapper-choose-options">
         <div class="text-center">
-          <ion-label class="font-color" style="line-height: 60px;" (click)="irParaLista()">Salvar
+          <ion-label class="font-color" style="line-height: 60px;" (click)="salvar()">Salvar
           </ion-label>
         </div>
       </div>
@@ -43,7 +43,7 @@
 
     </div>
 
-    <div id="procurar-baba-pet" *ngIf="usuario.tipoUsuario == 2">
+    <div id="procurar-baba-pet" *ngIf="usuario != undefined && usuario.tipoUsuario == 2">
       <ion-label class="font-color ">Cadastrar sua Conta no Babá Pet para encontrar uma Babá</ion-label>
       <ion-item>
         <ion-label position="stacked">Nome</ion-label>
@@ -73,7 +73,7 @@
 
       <div class="div-wrapper-choose-options">
         <div class="text-center">
-          <ion-label class="font-color" style="line-height: 60px;" (click)="irParaLista()">Salvar
+          <ion-label class="font-color" style="line-height: 60px;" (click)="salvar()">Salvar
           </ion-label>
         </div>
       </div>

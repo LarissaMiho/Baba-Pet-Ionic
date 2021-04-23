@@ -17,8 +17,8 @@ export class ListaPage implements OnInit {
     this.usuarioLogado = this.utilService.getUsuarioLogado();
     this.usuarioService.getAll().subscribe((data)=>{
       let usuario:any = data[0].value;
-      usuario.nome = "Leonardo";
-      this.usuarioService.update(data[0].value, data[0].key);
+      //usuario.nome = "Leonardo";
+      //this.usuarioService.update(data[0].value, data[0].key);
       console.log(data)
     }, error=>{
 
