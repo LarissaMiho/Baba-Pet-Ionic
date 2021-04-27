@@ -10,8 +10,9 @@ export class UsuarioService {
 
   constructor(private dbService: DbService) { }
 
-  insert(usuario: any) {
-    this.dbService.insert(usuario, DB.USUARIO);
+  async insert(usuario: any) {
+    let result = await this.dbService.insert(usuario, DB.USUARIO);
+    return result;
   }
 
   update(usuario: any, key: string) {

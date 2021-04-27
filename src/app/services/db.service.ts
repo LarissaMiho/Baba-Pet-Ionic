@@ -10,11 +10,9 @@ export class DbService {
   constructor(private db: AngularFireDatabase) { }
 
 
-  insert(obj: any, dbName: DB) {
-    this.db.list(dbName.toString()).push(obj)
-      .then((result: any) => {
-        localStorage.setItem("key", result.key)
-      });
+  async insert(obj: any, dbName: DB) {
+    let result = await this.db.list(dbName.toString()).push(obj);
+    return result.key;  
   }
 
   update(obj: any, key: string, dbName: DB) {

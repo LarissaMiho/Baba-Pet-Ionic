@@ -46,9 +46,10 @@ export class CadastroPage implements OnInit {
     this.isCadastro = true;
   }
 
-  irParaLista(){
+  async irParaLista(){
     this.usuario.tipoUsuario = this.tipoUsuario;
-    this.usuarioService.insert(this.usuario);
+    let key = await this.usuarioService.insert(this.usuario);
+    this.usuario.key = key;
     this.utilService.setUsuarioLogado(this.usuario);
     this.router.navigate(["/lista"])
   }

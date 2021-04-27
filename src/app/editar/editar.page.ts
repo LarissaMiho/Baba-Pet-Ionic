@@ -16,8 +16,8 @@ export class EditarPage implements OnInit {
   }
 
   ngOnInit() {
-    //this.usuario = this.utilService.getUsuarioLogado();
-    this.key = localStorage.getItem("key")
+    this.usuario = this.utilService.getUsuarioLogado();
+    this.key = this.usuario.key;
     this.usuarioService.getByKey(this.key).subscribe((result:any)=>{
       this.usuario = result
     })

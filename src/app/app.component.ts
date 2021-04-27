@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, enableProdMode } from '@angular/core';
 import { Router } from '@angular/router';
 import { UtilService } from './services/util.service';
 @Component({
@@ -7,7 +7,7 @@ import { UtilService } from './services/util.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  tipoUsuario = 1  ;
+  tipoUsuario;
 
   public appPages = [
    // { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
@@ -26,7 +26,7 @@ export class AppComponent {
 
   public appPagesProcurador = [
     { title: 'Mapa Babá', url: '/lista', icon: 'mail' },
-    { title: 'Contato das Babás', url: '/folder/Inbox', icon: 'mail' },
+    { title: 'Contato das Babás', url: '/todos-contatos', icon: 'mail' },
     { title: 'Editar Perfil', url: '/editar', icon: 'mail' },
     { title: 'Sair', url: '/login', icon: 'mail' },
   ];
@@ -37,6 +37,7 @@ export class AppComponent {
 
   ngOnInit() {
     //this.tipoUsuario = this.utilService.getUsuarioLogado();
+    this.tipoUsuario = this.utilService.getUsuarioLogado().tipoUsuario;
   }
 
   validarLogado() {
