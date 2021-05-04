@@ -34,10 +34,17 @@ export class AppComponent {
   constructor(private router: Router, private utilService: UtilService) {
     //this.validarLogado();
   }
-
+  
   ngOnInit() {
     //this.tipoUsuario = this.utilService.getUsuarioLogado();
-    this.tipoUsuario = this.utilService.getUsuarioLogado().tipoUsuario;
+    let u = this.utilService.getUsuarioLogado();
+    if(u){
+      this.tipoUsuario = u.tipoUsuario;
+    }else{
+      this.validarLogado();
+    }
+
+    
   }
 
   validarLogado() {

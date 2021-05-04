@@ -80,6 +80,16 @@
     },
     "cordova-plugin-ionic-keyboard": {
       "PACKAGE_NAME": "com.baba.pet"
+    },
+    "cordova-plugin-geolocation": {
+      "GPS_REQUIRED": "true",
+      "PACKAGE_NAME": "com.baba.pet"
+    },
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.baba.pet"
+    },
+    "cordova-plugin-nativegeocoder": {
+      "PACKAGE_NAME": "com.baba.pet"
     }
   },
   "dependent_plugins": {},
@@ -462,6 +472,14 @@
       "clobbers": [
         "Ionic.WebView"
       ]
+    },
+    {
+      "file": "plugins/cordova-plugin-nativegeocoder/www/NativeGeocoder.js",
+      "id": "cordova-plugin-nativegeocoder.NativeGeocoder",
+      "pluginId": "cordova-plugin-nativegeocoder",
+      "clobbers": [
+        "nativegeocoder"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -473,6 +491,9 @@
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-ionic-webview": "4.2.1",
-    "cordova-plugin-ionic-keyboard": "2.2.0"
+    "cordova-plugin-ionic-keyboard": "2.2.0",
+    "cordova-plugin-geolocation": "4.1.0",
+    "cordova-plugin-add-swift-support": "2.0.2",
+    "cordova-plugin-nativegeocoder": "3.4.1"
   }
 }

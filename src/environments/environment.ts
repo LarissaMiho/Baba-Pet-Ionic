@@ -1,5 +1,7 @@
 export const environment = {
   production: false,
+  API_CEP: "http://localhost:5000/api",
+  TOKEN: "Token 70885491cf7edfcd6998d756dc8214d1",
   firebase: {
     apiKey: "AIzaSyCrzQTMzpRJqBnuQ4XiciZfdntYqopeCEM",
     authDomain: "babapet-a8832.firebaseapp.com",

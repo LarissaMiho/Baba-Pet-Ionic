@@ -41,23 +41,31 @@
 
     <div id="procurar-baba-pet" *ngIf="usuarioLogado.tipoUsuario == 2">
 
-      <ng-container>
-        <!--<div #map>
+      <ion-button color="secondary" (click)="mudarVisualizacao()">{{textoBotao}}</ion-button>
+      <div class="map-container" [hidden]="textoBotao==='Mapa'">
+        <div class="map-frame">
+          <div id="map"></div>
+        </div>
+      </div>
 
-        </div>-->
-      </ng-container>
 
-      <ng-container *ngFor="let usuario of usuarios">
-        <ion-item *ngIf="usuario.value.tipoUsuario==1" (click)="irParaContato(usuario.key);">
-          <ion-avatar slot="start">
-            <img>
-          </ion-avatar>
-          <ion-label>
-            <h2>{{usuario.value.nome}}</h2>
-            <p>{{usuario.value.tempoDisponivel}}</p>
-          </ion-label>
-        </ion-item>
-      </ng-container>
+
+      <div [hidden]="textoBotao==='Lista'">
+        <ng-container *ngFor="let usuario of usuarios">
+          <ion-item *ngIf="usuario.value.tipoUsuario==1" (click)="irParaContato(usuario.key);">
+            <ion-avatar slot="start">
+              <img>
+            </ion-avatar>
+            <ion-label>
+              <h2>{{usuario.value.nome}}</h2>
+              <p>{{usuario.value.tempoDisponivel}}</p>
+            </ion-label>
+          </ion-item>
+        </ng-container>
+      </div>
+
+
+
 
 
     </div>
