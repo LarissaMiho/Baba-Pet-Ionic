@@ -16,6 +16,7 @@ export class ContatoPage implements OnInit {
   pedidos: any;
   pedido: any;
   data: any;
+  key:any;
 
   constructor(private utilService: UtilService, private router: Router, 
     private usuarioService: UsuarioService, private pedidoService: PedidoService,
@@ -28,6 +29,7 @@ export class ContatoPage implements OnInit {
         this.data = params.key;
         this.usuarioService.getByKey(this.data).subscribe((result: any) => {
           this.usuarioEscolhido = result
+          this.ProcurarPedido();
         })
       }
     });
@@ -45,27 +47,28 @@ export class ContatoPage implements OnInit {
   ProcurarPedido(){
     this.pedidoService.getAll().subscribe((result:any)=>{
       this.pedidos = result
+      this.pedidos.forEach(element => {
+        if(element.value.baba == this.utilService.getUsuarioLogado().key && element.value.procurador == this.data){
+          this.pedido = element.value;
+          this.key = element.key;
+        }
+      });
     })
-    this.pedidos.forEach(element => {
-      if(element.baba == this.utilService.getUsuarioLogado().key && element.procurador == this.data){
-        this.pedido = element;
-      }
-    });
-
-    return this.pedido;
+    
 
     
   }
 
   Aceitar(){
-    this.pedido = this.ProcurarPedido();
-
+    
     this.pedido.status = "aceito"
-
+    this.pedidoService.update(this.pedido, this.key)
     this.router.navigate(["/lista"])
   }
 
   Recusar(){
+    this.pedido.status = "recusado"
+    this.pedidoService.update(this.pedido, this.key)
     this.router.navigate(["/lista"])
   }
 

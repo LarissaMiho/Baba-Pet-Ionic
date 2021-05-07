@@ -7,7 +7,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import * as L from 'leaflet';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+import { NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 
 @Component({
   selector: 'app-lista',
@@ -47,11 +47,8 @@ export class ListaPage implements OnInit {
   constructor(private utilService: UtilService, private router: Router,
     private usuarioService: UsuarioService, private pedidoService: PedidoService,
     private loadingCtrl: LoadingController, private geolocation: Geolocation,
-    private nativeGeocoder: NativeGeocoder, private cepService: CepService) { }
+    private cepService: CepService) { }
 
-  ngAfterViewInit(): void {
-    
-  }
 
   mudarVisualizacao(){
     if(this.textoBotao === "Lista"){
@@ -138,14 +135,13 @@ export class ListaPage implements OnInit {
       console.log(clickedMarker._popup._content)
       listaPage.irParaContato(clickedMarker._popup._content.split("|")[1]);
     });
-    L.marker([this.lat,this.lng],{icon:this.greenIcon}).addTo(markersLayer).bindPopup("Eu");
+    L.marker([this.lat,this.lng],{icon:this.roxoIcon}).addTo(markersLayer).bindPopup("Eu");
 
     for(let u of this.listaBabas){
       L.marker([u.lat,u.lng],{icon:this.greenIcon}).addTo(markersLayer).bindPopup(u.nome);
     }
-    this.listaBabas.forEach(element => {
-    });
-    L.marker([-23.0946682,-45.7084895],{icon:this.roxoIcon}).addTo(markersLayer).bindPopup("Teste 1");
+
+   
     
 
     // populate map from stops…
@@ -166,7 +162,7 @@ export class ListaPage implements OnInit {
         this.usuarios = result1
         
         for(let u of this.usuarios){
-          if(u.value.endereco){
+          if(u.value.endereco && u.value.tipoUsuario != 2){
               this.getLatLongByAddres(u.value.endereco, u.value.nome, u.key);
   
           }
@@ -176,14 +172,21 @@ export class ListaPage implements OnInit {
       setTimeout(() => {
         this.initMap();
       }, 5000);
+    }else{
+      this.usuarioService.getAll().subscribe((result1:any)=>{
+        this.usuarios = result1;
+      })
+
+      this.pedidoService.getAll().subscribe((result2:any)=>{
+        this.pedidos = result2;
+        console.log(result2);
+      })
     }
     
     
     
 
-    this.pedidoService.getAll().subscribe((result2:any)=>{
-      this.pedidos = result2;
-    })
+    
 
     /*this.usuarioService.getAll().subscribe((data)=>{
       let usuario:any = data[0].value;

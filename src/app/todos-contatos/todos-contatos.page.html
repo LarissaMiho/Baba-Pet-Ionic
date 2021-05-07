@@ -7,17 +7,20 @@
 <ion-content>
   <div class="cadastro-wrapper">
 
-    <ion-item (click)="irParaContato();">
-      <ion-avatar slot="start">
-        <img src="./avatar-finn.png">
-      </ion-avatar>
-      <ion-label>
-        <h2>Maria Braga</h2>
-        <p>00 000000-0000</p>
-      </ion-label>
-    </ion-item>
+    <ng-container *ngFor="let pedido of pedidos">
+      <ion-item *ngIf="pedido.value.procurador == usuarioLogado.key && usuarios" (click)="irParaContato();">
+        <ion-label>
+          <h2>{{buscarNomePorKey(pedido.value.baba)}}</h2>
 
-    <ion-item (click)="irParaContato();">
+          <p *ngIf="pedido.value.status == 'pendente' ">Pendente</p>
+          <p *ngIf="pedido.value.status == 'aceito' ">{{buscarContatoPorKey(pedido.value.baba)}}</p>
+          <p *ngIf="pedido.value.status == 'rejeitado' ">Rejeitado</p>
+        </ion-label>
+      </ion-item>
+    </ng-container>
+
+
+    <!-- <ion-item (click)="irParaContato();">
       <ion-avatar slot="start">
         <img src="./avatar-finn.png">
       </ion-avatar>
@@ -25,7 +28,7 @@
         <h2>Lucas Henrique</h2>
         <p>Contato Rejeitado</p>
       </ion-label>
-    </ion-item>
+    </ion-item> -->
   </div>
 
 </ion-content>

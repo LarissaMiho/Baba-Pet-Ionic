@@ -50,28 +50,28 @@ export class CadastroPage implements OnInit {
     this.isCadastro = true;
   }
 
-   irParaLista(){
+    async irParaLista(){
     this.usuario.tipoUsuario = this.tipoUsuario;
 
     console.log("antes da funçção")
-    this.pegarCordenadas();
     console.log("depois da função: ");
     console.log(this.usuario.lat);
     
 
-    setTimeout(() => {
-      let key =  this.usuarioService.insert(this.usuario);
+    
+      let key = await this.usuarioService.insert(this.usuario);
     this.usuario.key = key;
     this.utilService.setUsuarioLogado(this.usuario);
     this.router.navigate(["/lista"])
-    }, 5000);
+    
     
   }
 
-  pegarCordenadas(){
-    this.cepService.find(this.usuario.endereco).subscribe((data)=>{
+  async pegarCordenadas(){
+    await this.cepService.find(this.usuario.endereco).subscribe((data)=>{
       this.usuario.lat = Number(data.latitude)
       this.usuario.lng = Number(data.longitude)
+      this.irParaLista();
       console.log("data:");
       console.log(data);
       console.log(this.usuario.lat);
