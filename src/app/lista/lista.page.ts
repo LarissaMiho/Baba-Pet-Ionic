@@ -120,7 +120,7 @@ export class ListaPage implements OnInit {
   private initMap(): void {
     this.map = L.map('map', {
       center: [this.lat,this.lng],
-      zoom: 18
+      zoom: 14
     });
     let listaPage = this;
 
@@ -141,12 +141,6 @@ export class ListaPage implements OnInit {
       L.marker([u.lat,u.lng],{icon:this.greenIcon}).addTo(markersLayer).bindPopup(u.nome);
     }
 
-   
-    
-
-    // populate map from stops…
-
-    
     tiles.addTo(this.map);
   }
   teste(a){
@@ -187,15 +181,6 @@ export class ListaPage implements OnInit {
     
 
     
-
-    /*this.usuarioService.getAll().subscribe((data)=>{
-      let usuario:any = data[0].value;
-      //usuario.nome = "Leonardo";
-      //this.usuarioService.update(data[0].value, data[0].key);
-      console.log(data)
-    }, error=>{
-
-    })*/
   }
 
   
@@ -212,17 +197,5 @@ export class ListaPage implements OnInit {
   }
 
 
-
-  /*async loadMap(){
-    this.loading = await this.loadingCtrl.create({message: "Por favor, aguarde..."})
-    await this.loading.present();
-
-    Environment.setEnv({
-      'API_KEY_FOR_BROWSER_RELEASE': 'AIzaSyBpUcr_upKhaCuPYjB7wnaSJQ9kmaffHkc',
-      'API_KEY_FOR_BROWSER_DEBUG': 'AIzaSyBpUcr_upKhaCuPYjB7wnaSJQ9kmaffHkc'
-    });
-
-    this.map = GoogleMaps.create(this.mapElement);
-  }*/
 
 }
