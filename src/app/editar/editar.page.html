@@ -7,8 +7,8 @@
 <ion-content>
   <div class="cadastro-wrapper">
 
-    <div id="ser-baba-pet" *ngIf="usuario.tipoUsuario == 1">
-      <ion-label class="font-color ">Cadastrar sua Conta no Babá Pet como Babá</ion-label>
+    <div id="ser-baba-pet" *ngIf="usuario != undefined && usuario.tipoUsuario == 1">
+      <ion-label class="font-color ">Editar Conta:</ion-label>
       <ion-item>
         <ion-label position="stacked">Nome</ion-label>
         <ion-input [(ngModel)]="usuario.nome"></ion-input>
@@ -33,9 +33,13 @@
         <ion-label position="stacked">Descrição dos Preços</ion-label>
         <ion-textarea [(ngModel)]="usuario.descricaoPreco"></ion-textarea>
       </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Endereço</ion-label>
+        <ion-textarea [(ngModel)]="usuario.endereco"></ion-textarea>
+      </ion-item>
       <div class="div-wrapper-choose-options">
         <div class="text-center">
-          <ion-label class="font-color" style="line-height: 60px;" (click)="irParaLista()">Salvar
+          <ion-label class="font-color" style="line-height: 60px;" (click)="salvar()">Salvar
           </ion-label>
         </div>
       </div>
@@ -43,8 +47,8 @@
 
     </div>
 
-    <div id="procurar-baba-pet" *ngIf="usuario.tipoUsuario == 2">
-      <ion-label class="font-color ">Cadastrar sua Conta no Babá Pet para encontrar uma Babá</ion-label>
+    <div id="procurar-baba-pet" *ngIf="usuario != undefined && usuario.tipoUsuario == 2">
+      <ion-label class="font-color ">Editar Conta:</ion-label>
       <ion-item>
         <ion-label position="stacked">Nome</ion-label>
         <ion-input [(ngModel)]="usuario.nome"></ion-input>
@@ -73,7 +77,7 @@
 
       <div class="div-wrapper-choose-options">
         <div class="text-center">
-          <ion-label class="font-color" style="line-height: 60px;" (click)="irParaLista()">Salvar
+          <ion-label class="font-color" style="line-height: 60px;" (click)="salvar()">Salvar
           </ion-label>
         </div>
       </div>

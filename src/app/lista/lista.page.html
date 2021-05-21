@@ -8,7 +8,27 @@
   <div class="cadastro-wrapper">
 
     <div id="procurar-baba-pet" *ngIf="usuarioLogado.tipoUsuario == 1">
-      <ion-item (click)="irParaContato();">
+
+      <ng-container *ngFor="let pedido of pedidos">
+
+
+        <ng-container *ngFor="let usuario of usuarios">
+          <ion-item *ngIf="pedido.value.baba==usuarioLogado.key && pedido.value.procurador==usuario.key"
+            (click)="irParaContato(usuario.key);">
+            <ion-avatar slot="start">
+              <img>
+            </ion-avatar>
+            <ion-label>
+              <h2>Dono: {{usuario.value.nome}}</h2>
+              <h3>{{usuario.value.tipo}}</h3>
+              <p>{{usuario.value.raca}}</p>
+            </ion-label>
+          </ion-item>
+        </ng-container>
+      </ng-container>
+
+
+      <!--<ion-item (click)="irParaContato();">
         <ion-avatar slot="start">
           <img src="./avatar-finn.png">
         </ion-avatar>
@@ -17,41 +37,38 @@
           <h3>Pássaro</h3>
           <p>Coruja</p>
         </ion-label>
-      </ion-item>
+      </ion-item>-->
 
-      <ion-item>
-        <ion-avatar slot="start">
-          <img src="./avatar-finn.png">
-        </ion-avatar>
-        <ion-label>
-          <h2>Dono: Elizabeth</h2>
-          <h3>Cachorro</h3>
-          <p>Poodle</p>
-        </ion-label>
-      </ion-item>
     </div>
 
-
     <div id="procurar-baba-pet" *ngIf="usuarioLogado.tipoUsuario == 2">
-      <ion-item (click)="irParaContato();">
-        <ion-avatar slot="start">
-          <img src="./avatar-finn.png">
-        </ion-avatar>
-        <ion-label>
-          <h2>Lucas Henrique</h2>
-          <p>Seg à sex - o dia todo</p>
-        </ion-label>
-      </ion-item>
 
-      <ion-item (click)="irParaContato();">
-        <ion-avatar slot="start">
-          <img src="./avatar-finn.png">
-        </ion-avatar>
-        <ion-label>
-          <h2>Maria Braga</h2>
-          <p>Seg à qui e Sab - o dia todo </p>
-        </ion-label>
-      </ion-item>
+      <ion-button color="secondary" (click)="mudarVisualizacao()">{{textoBotao}}</ion-button>
+      <div class="map-container" [hidden]="textoBotao==='Mapa'">
+        <div class="map-frame">
+          <div id="map"></div>
+        </div>
+      </div>
+
+
+
+      <div [hidden]="textoBotao==='Lista'">
+        <ng-container *ngFor="let usuario of usuarios">
+          <ion-item *ngIf="usuario.value.tipoUsuario==1" (click)="irParaContato(usuario.key);">
+            <ion-avatar slot="start">
+              <img>
+            </ion-avatar>
+            <ion-label>
+              <h2>{{usuario.value.nome}}</h2>
+              <p>{{usuario.value.tempoDisponivel}}</p>
+            </ion-label>
+          </ion-item>
+        </ng-container>
+      </div>
+
+
+
+
 
     </div>
   </div>

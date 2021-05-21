@@ -1,3 +1,5 @@
+import { CepService } from './../services/cep.service';
+import { UsuarioService } from './../services/usuario.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { UtilService } from '../services/util.service';
@@ -12,7 +14,8 @@ export class CadastroPage implements OnInit {
   isCadastro = false;
   tipoUsuario = 0;
   usuario: any;
-  constructor(private utilService: UtilService,  private router: Router) { }
+  constructor(private utilService: UtilService,  private router: Router, 
+    private usuarioService: UsuarioService, private cepService: CepService) { }
 
   ngOnInit() {
   }
@@ -24,7 +27,10 @@ export class CadastroPage implements OnInit {
       contato:"",
       tempoDisponivel:"",
       descricaoLocal:"",
-      descricaoPreco:""
+      descricaoPreco:"",
+      endereco:"",
+      lat:"",
+      lng:"",
 
     }
     this.tipoUsuario = 1;
@@ -44,11 +50,34 @@ export class CadastroPage implements OnInit {
     this.isCadastro = true;
   }
 
-  irParaLista(){
+    async irParaLista(){
     this.usuario.tipoUsuario = this.tipoUsuario;
+
+    console.log("antes da funçção")
+    console.log("depois da função: ");
+    console.log(this.usuario.lat);
+    
+
+    
+      let key = await this.usuarioService.insert(this.usuario);
+    this.usuario.key = key;
     this.utilService.setUsuarioLogado(this.usuario);
     this.router.navigate(["/lista"])
+    
+    
   }
+
+  async pegarCordenadas(){
+    await this.cepService.find(this.usuario.endereco).subscribe((data)=>{
+      this.usuario.lat = Number(data.latitude)
+      this.usuario.lng = Number(data.longitude)
+      this.irParaLista();
+      console.log("data:");
+      console.log(data);
+      console.log(this.usuario.lat);
+    })
+  }
+
 
 
 }
