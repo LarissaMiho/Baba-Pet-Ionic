@@ -7,6 +7,10 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.baba.pet"
+    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.baba.pet"
     },
@@ -16,10 +20,16 @@
       "FACEBOOK_HYBRID_APP_EVENTS": "false",
       "FACEBOOK_ANDROID_SDK_VERSION": "5.13.0",
       "PACKAGE_NAME": "com.baba.pet"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.baba.pet"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.baba.pet"
+    },
+    "cordova-plugin-file": {
       "PACKAGE_NAME": "com.baba.pet"
     }
   }

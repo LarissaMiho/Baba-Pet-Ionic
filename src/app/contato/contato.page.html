@@ -14,6 +14,46 @@
       <ion-label class="font-color ">Data Nascimento: {{usuarioEscolhido.dataNascimento}}</ion-label><br><br>
       <ion-label class="font-color ">Características: {{usuarioEscolhido.descricao}}</ion-label><br><br>
       <ion-label class="font-color ">Observações: {{usuarioEscolhido.observacoes}}</ion-label><br><br>
+      <ion-item>
+        <ion-label position="stacked">Agressividade</ion-label>
+        <div class="d-flex">
+          <ion-icon name="paw-outline" [ngClass]="usuarioEscolhido.agressividades[i]?'selected-rating':''"
+            *ngFor="let agressividade of usuarioEscolhido.agressividades; let i=index">
+          </ion-icon>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Porte</ion-label>
+        <div class="d-flex">
+          <ion-icon name="paw-outline" [ngClass]="usuarioEscolhido.portes[i]?'selected-rating':''"
+            *ngFor="let porte of usuarioEscolhido.portes; let i=index">
+          </ion-icon>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Agitação</ion-label>
+        <div class="d-flex">
+          <ion-icon name="paw-outline" [ngClass]="usuarioEscolhido.agitacoes[i]?'selected-rating':''"
+            *ngFor="let agitacao of usuarioEscolhido.agitacoes; let i=index">
+          </ion-icon>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Atenção</ion-label>
+        <div class="d-flex">
+          <ion-icon name="paw-outline" [ngClass]="usuarioEscolhido.atencoes[i]?'selected-rating':''"
+            *ngFor="let atencao of usuarioEscolhido.atencoes; let i=index">
+          </ion-icon>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Exotico</ion-label>
+        <div class="d-flex">
+          <ion-icon name="paw-outline" [ngClass]="usuarioEscolhido.exoticos[i]?'selected-rating':''"
+            *ngFor="let exotico of usuarioEscolhido.exoticos; let i=index">
+          </ion-icon>
+        </div>
+      </ion-item>
 
       <div class="div-wrapper-choose-options">
         <div class="text-center">
@@ -34,6 +74,47 @@
       <ion-label class="font-color ">Data Nascimento: {{usuarioEscolhido.dataNascimento}}</ion-label><br><br>
       <ion-label class="font-color ">Tempo Disponível: {{usuarioEscolhido.tempoDisponivel}}</ion-label><br><br>
       <ion-label class="font-color ">Local: {{usuarioEscolhido.descricaoLocal}}</ion-label><br><br>
+      <ion-item>
+        <ion-label position="stacked">Agressividade</ion-label>
+        <div class="d-flex">
+          <ion-icon name="paw-outline" [ngClass]="usuarioEscolhido.agressividadesSuportadas[i]?'selected-rating':''"
+            *ngFor="let agressividade of usuarioEscolhido.agressividadesSuportadas; let i=index">
+          </ion-icon>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Porte</ion-label>
+        <div class="d-flex">
+          <ion-icon name="paw-outline" [ngClass]="usuarioEscolhido.portesSuportados[i]?'selected-rating':''"
+            *ngFor="let porte of usuarioEscolhido.portesSuportados; let i=index">
+          </ion-icon>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Agitação</ion-label>
+        <div class="d-flex">
+          <ion-icon name="paw-outline" [ngClass]="usuarioEscolhido.agitacoesSuportadas[i]?'selected-rating':''"
+            *ngFor="let agitacao of usuarioEscolhido.agitacoesSuportadas; let i=index">
+          </ion-icon>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Atenção</ion-label>
+        <div class="d-flex">
+          <ion-icon name="paw-outline" [ngClass]="usuarioEscolhido.atencoesSuportadas[i]?'selected-rating':''"
+            *ngFor="let atencao of usuarioEscolhido.atencoesSuportadas; let i=index">
+          </ion-icon>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Exotico</ion-label>
+        <div class="d-flex">
+          <ion-icon name="paw-outline" [ngClass]="usuarioEscolhido.exoticosSuportados[i]?'selected-rating':''"
+            *ngFor="let exotico of usuarioEscolhido.exoticosSuportados; let i=index">
+          </ion-icon>
+        </div>
+      </ion-item>
+
 
       <div class="div-wrapper-choose-options">
         <div class="text-center">

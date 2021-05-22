@@ -102,3 +102,10 @@ ion-content{
     margin-left: 30px;
     margin-top: 10px;
 }
+
+.d-flex{
+    display: flex;flex-flow: row nowrap;font-size:35px; margin-top: 10px;
+}
+.selected-rating{
+    color: red;
+}

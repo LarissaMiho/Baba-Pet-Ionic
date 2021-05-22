@@ -29,6 +29,7 @@ export class ContatoPage implements OnInit {
         this.data = params.key;
         this.usuarioService.getByKey(this.data).subscribe((result: any) => {
           this.usuarioEscolhido = result
+          console.log(this.usuarioEscolhido);
           this.ProcurarPedido();
         })
       }

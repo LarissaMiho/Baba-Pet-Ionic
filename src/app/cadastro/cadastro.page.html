@@ -17,7 +17,7 @@
       </div>
       <div class="div-wrapper-choose-options">
         <div class="text-center">
-          <ion-label class="font-color" style="line-height: 60px;" (click)="procurarBabaPet()">procurar por babá de pets
+          <ion-label class="font-color" style="line-height: 60px;" (click)="procurarBabaPet()">Procurar por babá de pets
           </ion-label>
         </div>
       </div>
@@ -29,6 +29,14 @@
         <ion-item>
           <ion-label position="stacked">Nome</ion-label>
           <ion-input [(ngModel)]="usuario.nome"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">E-mail</ion-label>
+          <ion-input [(ngModel)]="usuario.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Senha</ion-label>
+          <ion-input [(ngModel)]="usuario.senha"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Data de Nascimento</ion-label>
@@ -54,6 +62,50 @@
           <ion-label position="stacked">Endereço</ion-label>
           <ion-textarea [(ngModel)]="usuario.endereco"></ion-textarea>
         </ion-item>
+
+        <ion-button color="primary" (click)="tirarFoto()">Tirar Foto do Local</ion-button>
+
+        <ion-item>
+          <ion-label position="stacked">Agressividade</ion-label>
+          <div class="d-flex">
+            <ion-icon name="paw-outline" [ngClass]="usuario.agressividadesSuportadas[i]?'selected-rating':''"
+              (click)="rateAgressividade(i)"
+              *ngFor="let agressividade of usuario.agressividadesSuportadas; let i=index"></ion-icon>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Porte</ion-label>
+          <div class="d-flex">
+            <ion-icon name="paw-outline" [ngClass]="usuario.portesSuportados[i]?'selected-rating':''"
+              (click)="ratePorte(i)" *ngFor="let porte of usuario.portesSuportados; let i=index">
+            </ion-icon>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Agitação</ion-label>
+          <div class="d-flex">
+            <ion-icon name="paw-outline" [ngClass]="usuario.agitacoesSuportadas[i]?'selected-rating':''"
+              (click)="rateAgitacao(i)" *ngFor="let agitacao of usuario.agitacoesSuportadas; let i=index">
+            </ion-icon>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Atenção</ion-label>
+          <div class="d-flex">
+            <ion-icon name="paw-outline" [ngClass]="usuario.atencoesSuportadas[i]?'selected-rating':''"
+              (click)="rateAtencao(i)" *ngFor="let atencao of usuario.atencoesSuportadas; let i=index">
+            </ion-icon>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Exotico</ion-label>
+          <div class="d-flex">
+            <ion-icon name="paw-outline" [ngClass]="usuario.exoticosSuportados[i]?'selected-rating':''"
+              (click)="rateExotico(i)" *ngFor="let exotico of usuario.exoticosSuportados; let i=index">
+            </ion-icon>
+          </div>
+        </ion-item>
+
         <div id="login" class="d-flex-vincular">
           <ion-icon (click)="pegarCordenadas()" name="logo-facebook" class="wrapper icon fb"></ion-icon>
           <ion-icon (click)="pegarCordenadas()" name="logo-instagram" class="wrapper icon insta"></ion-icon>
@@ -67,6 +119,14 @@
         <ion-item>
           <ion-label position="stacked">Nome</ion-label>
           <ion-input [(ngModel)]="usuario.nome"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">E-mail</ion-label>
+          <ion-input [(ngModel)]="usuario.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Senha</ion-label>
+          <ion-input [(ngModel)]="usuario.senha"></ion-input>
         </ion-item>
         <ion-label class="font-color ">Preencha com as informações de seu Pet</ion-label>
         <ion-item>
@@ -88,6 +148,46 @@
         <ion-item>
           <ion-label position="stacked">Observações</ion-label>
           <ion-textarea [(ngModel)]="usuario.observacoes"></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Agressividade</ion-label>
+          <div class="d-flex">
+            <ion-icon name="paw-outline" [ngClass]="usuario.agressividades[i]?'selected-rating':''"
+              (click)="rateAgressividade(i)" *ngFor="let agressividade of usuario.agressividades; let i=index">
+            </ion-icon>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Porte</ion-label>
+          <div class="d-flex">
+            <ion-icon name="paw-outline" [ngClass]="usuario.portes[i]?'selected-rating':''" (click)="ratePorte(i)"
+              *ngFor="let porte of usuario.portes; let i=index">
+            </ion-icon>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Agitação</ion-label>
+          <div class="d-flex">
+            <ion-icon name="paw-outline" [ngClass]="usuario.agitacoes[i]?'selected-rating':''" (click)="rateAgitacao(i)"
+              *ngFor="let agitacao of usuario.agitacoes; let i=index">
+            </ion-icon>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Atenção</ion-label>
+          <div class="d-flex">
+            <ion-icon name="paw-outline" [ngClass]="usuario.atencoes[i]?'selected-rating':''" (click)="rateAtencao(i)"
+              *ngFor="let atencao of usuario.atencoes; let i=index">
+            </ion-icon>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Exotico</ion-label>
+          <div class="d-flex">
+            <ion-icon name="paw-outline" [ngClass]="usuario.exoticos[i]?'selected-rating':''" (click)="rateExotico(i)"
+              *ngFor="let exotico of usuario.exoticos; let i=index">
+            </ion-icon>
+          </div>
         </ion-item>
         <div id="login" class="d-flex-vincular">
           <ion-icon (click)="irParaLista()" name="logo-facebook" class="wrapper icon fb"></ion-icon>

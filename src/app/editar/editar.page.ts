@@ -17,6 +17,7 @@ export class EditarPage implements OnInit {
 
   ngOnInit() {
     this.usuario = this.utilService.getUsuarioLogado();
+
     this.key = this.usuario.key;
     this.usuarioService.getByKey(this.key).subscribe((result:any)=>{
       this.usuario = result
@@ -27,6 +28,64 @@ export class EditarPage implements OnInit {
     this.usuarioService.update(this.usuario, this.key);
     this.utilService.setUsuarioLogado(this.usuario);
     this.router.navigate(["/lista"])
+  }
+
+  rateAgressividade(index:number){
+    if(this.usuario.tipoUsuario == 1){
+      for(let i=0; i<this.usuario.agressividadesSuportadas.length; i++){
+        this.usuario.agressividadesSuportadas[i] = i<=index?true:false;
+      }
+    }else{
+      for(let i=0; i<this.usuario.agressividades.length; i++){
+        this.usuario.agressividades[i] = i<=index?true:false;
+      }
+    }
+  }
+  ratePorte(index:number){
+    if(this.usuario.tipoUsuario == 1){
+      for(let i=0; i<this.usuario.portesSuportados.length; i++){
+        this.usuario.portesSuportados[i] = i<=index?true:false;
+      }
+    }else{
+      for(let i=0; i<this.usuario.portes.length; i++){
+        this.usuario.portes[i] = i<=index?true:false;
+      }
+    }
+  }
+
+  rateAgitacao(index:number){
+    if(this.usuario.tipoUsuario == 1){
+      for(let i=0; i<this.usuario.agitacoesSuportadas.length; i++){
+        this.usuario.agitacoesSuportadas[i] = i<=index?true:false;
+      }
+    }else{
+      for(let i=0; i<this.usuario.agitacoes.length; i++){
+        this.usuario.agitacoes[i] = i<=index?true:false;
+      }
+    }
+  }
+
+  rateAtencao(index:number){
+    if(this.usuario.tipoUsuario == 1){
+      for(let i=0; i<this.usuario.atencoesSuportadas.length; i++){
+        this.usuario.atencoesSuportadas[i] = i<=index?true:false;
+      }
+    }else{
+      for(let i=0; i<this.usuario.atencoes.length; i++){
+        this.usuario.atencoes[i] = i<=index?true:false;
+      }
+    }
+  }
+  rateExotico(index:number){
+    if(this.usuario.tipoUsuario == 1){
+      for(let i=0; i<this.usuario.exoticosSuportados.length; i++){
+        this.usuario.exoticosSuportados[i] = i<=index?true:false;
+      }
+    }else{
+      for(let i=0; i<this.usuario.exoticos.length; i++){
+        this.usuario.exoticos[i] = i<=index?true:false;
+      }
+    }
   }
 
 }
