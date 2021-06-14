@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  API_CEP: "http://64.227.81.135:5000/cep",
+  API_CEP: "http://64.227.81.135:8080/cep",
   TOKEN: "Token 70885491cf7edfcd6998d756dc8214d1",
   firebase: {
     apiKey: "AIzaSyCrzQTMzpRJqBnuQ4XiciZfdntYqopeCEM",

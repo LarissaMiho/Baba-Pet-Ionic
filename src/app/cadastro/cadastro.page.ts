@@ -3,7 +3,8 @@ import { UsuarioService } from './../services/usuario.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { UtilService } from '../services/util.service';
-
+import cadastrarDoisMil from '../util/util'
+import { lista, ruas } from '../mock/nomes';
 
 @Component({
   selector: 'app-cadastro',
@@ -15,11 +16,32 @@ export class CadastroPage implements OnInit {
   isCadastro = false;
   tipoUsuario = 0;
   usuario: any;
+  i = 0;
   constructor(private utilService: UtilService,  private router: Router, 
     private usuarioService: UsuarioService, private cepService: CepService) { }
 
   ngOnInit() {
     
+  }
+
+  cadastrarTeste(){
+
+      this.usuario =  cadastrarDoisMil(lista[this.getRandomNumber(0,lista.length - 1)], 
+      ruas[this.getRandomNumber(0, ruas.length - 1)]);
+      if(this.i<200){
+        this.tipoUsuario = 1;
+        this.pegarCordenadas(false);
+      }else{
+        this.tipoUsuario = 2;
+        this.irParaLista(false)
+      }
+      
+
+   
+  }
+
+  getRandomNumber(min, max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   buildAgressividade(){
@@ -140,7 +162,7 @@ export class CadastroPage implements OnInit {
     }
   }
 
-    async irParaLista(){
+    async irParaLista(redirecionar = true){
     this.usuario.tipoUsuario = this.tipoUsuario;
 
     console.log("antes da funçção")
@@ -151,17 +173,33 @@ export class CadastroPage implements OnInit {
     
       let key = await this.usuarioService.insert(this.usuario);
     this.usuario.key = key;
-    this.utilService.setUsuarioLogado(this.usuario);
+    if(this.i<400){
+      setTimeout(() => {
+        this.i += 1;
+      this.cadastrarTeste();
+      console.log("----------------------------------")
+      console.log(this.usuario.endereco);
+      }, 1000
+      );
+      
+      
+    }
+    if(redirecionar){
+      this.utilService.setUsuarioLogado(this.usuario);
     this.router.navigate(["/lista"])
+    }
+    
     
     
   }
 
-  async pegarCordenadas(){
+  async pegarCordenadas(redirecionar = true){
     await this.cepService.find(this.usuario.endereco).subscribe((data)=>{
       this.usuario.lat = Number(data.latitude)
       this.usuario.lng = Number(data.longitude)
-      this.irParaLista();
+
+      this.irParaLista(redirecionar);
+
       console.log("data:");
       console.log(data);
       console.log(this.usuario.lat);
