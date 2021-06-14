@@ -59,7 +59,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-title>termosServicos</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>termosServicos</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ion-label position=\"stacked\">O Aplicativo Babá Pet não\r\n    controla nem orienta o que as pessoas e terceiros fazem ou dizem, portanto, não somos responsáveis por\r\n    serviços não pagos ou desviados e nem pelos cuidados de seu animal de estimação do cuidador.\r\n    O aplicativo apenas vende os serviços de hospedagem.\r\n\r\n  </ion-label>\r\n</ion-content>");
 
 /***/ }),
 

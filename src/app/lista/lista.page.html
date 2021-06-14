@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>lista</ion-title>
+  <ion-toolbar class="ion-color center" [style.background-color]="toolbarColor">
+    <ion-title>BABÁ PET</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,9 +15,9 @@
         <ng-container *ngFor="let usuario of usuarios">
           <ion-item *ngIf="pedido.value.baba==usuarioLogado.key && pedido.value.procurador==usuario.key"
             (click)="irParaContato(usuario.key);">
-            <ion-avatar slot="start">
+            <!--<ion-avatar slot="start">
               <img>
-            </ion-avatar>
+            </ion-avatar>-->
             <ion-label>
               <h2>Dono: {{usuario.value.nome}}</h2>
               <h3>{{usuario.value.tipo}}</h3>
@@ -55,9 +55,9 @@
       <div [hidden]="textoBotao==='Lista'">
         <ng-container *ngFor="let usuario of usuarios">
           <ion-item *ngIf="usuario.value.tipoUsuario==1" (click)="irParaContato(usuario.key);">
-            <ion-avatar slot="start">
+            <!--<ion-avatar slot="start">
               <img>
-            </ion-avatar>
+            </ion-avatar>-->
             <ion-label>
               <h2>{{usuario.value.nome}}</h2>
               <p>{{usuario.value.tempoDisponivel}}</p>

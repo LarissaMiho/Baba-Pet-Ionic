@@ -14123,7 +14123,7 @@ ListaPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".map-container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  margin: 30px;\n}\n\n.map-frame {\n  border: 2px solid black;\n  height: 100%;\n}\n\n#map {\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGxpc3RhLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsTUFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLFlBQUE7QUFDSjs7QUFFRTtFQUNFLHVCQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUVFO0VBQ0UsWUFBQTtBQUNKIiwiZmlsZSI6Imxpc3RhLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXAtY29udGFpbmVyIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogMDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICByaWdodDogMDtcclxuICAgIGJvdHRvbTogMDtcclxuICAgIG1hcmdpbjogMzBweDtcclxuICB9XHJcblxyXG4gIC5tYXAtZnJhbWUge1xyXG4gICAgYm9yZGVyOiAycHggc29saWQgYmxhY2s7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgfVxyXG5cclxuICAjbWFwIHtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICB9Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".map-container {\n  position: absolute;\n  top: 15px;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  margin: 30px;\n}\n\n.map-frame {\n  border: 2px solid black;\n  height: 100%;\n}\n\n#map {\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGxpc3RhLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLFlBQUE7QUFDSjs7QUFFRTtFQUNFLHVCQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUVFO0VBQ0UsWUFBQTtBQUNKIiwiZmlsZSI6Imxpc3RhLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXAtY29udGFpbmVyIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogMTVweDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICByaWdodDogMDtcclxuICAgIGJvdHRvbTogMDtcclxuICAgIG1hcmdpbjogMzBweDtcclxuICB9XHJcblxyXG4gIC5tYXAtZnJhbWUge1xyXG4gICAgYm9yZGVyOiAycHggc29saWQgYmxhY2s7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgfVxyXG5cclxuICAjbWFwIHtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICB9Il19 */");
 
 /***/ }),
 
@@ -14136,7 +14136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-title>lista</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <div class=\"cadastro-wrapper\">\n\n    <div id=\"procurar-baba-pet\" *ngIf=\"usuarioLogado.tipoUsuario == 1\">\n\n      <ng-container *ngFor=\"let pedido of pedidos\">\n        <ng-container *ngFor=\"let usuario of usuarios\">\n          <ion-item *ngIf=\"pedido.value.baba==usuarioLogado.key && pedido.value.procurador==usuario.key\"\n            (click)=\"irParaContato(usuario.key);\">\n            <ion-avatar slot=\"start\">\n              <img>\n            </ion-avatar>\n            <ion-label>\n              <h2>Dono: {{usuario.value.nome}}</h2>\n              <h3>{{usuario.value.tipo}}</h3>\n              <p>{{usuario.value.raca}}</p>\n            </ion-label>\n          </ion-item>\n        </ng-container>\n      </ng-container>\n\n\n      <!--<ion-item (click)=\"irParaContato();\">\n        <ion-avatar slot=\"start\">\n          <img src=\"./avatar-finn.png\">\n        </ion-avatar>\n        <ion-label>\n          <h2>Dono: Leonardo</h2>\n          <h3>Pássaro</h3>\n          <p>Coruja</p>\n        </ion-label>\n      </ion-item>-->\n\n    </div>\n\n    <div id=\"procurar-baba-pet\" *ngIf=\"usuarioLogado.tipoUsuario == 2\">\n\n      <div class=\"map-container\">\n        <div class=\"map-frame\">\n          <div id=\"map\"></div>\n        </div>\n      </div>\n\n\n\n\n      <!-- <ng-container *ngFor=\"let usuario of usuarios\">\n        <ion-item *ngIf=\"usuario.value.tipoUsuario==1\" (click)=\"irParaContato(usuario.key);\">\n          <ion-avatar slot=\"start\">\n            <img>\n          </ion-avatar>\n          <ion-label>\n            <h2>{{usuario.value.nome}}</h2>\n            <p>{{usuario.value.tempoDisponivel}}</p>\n          </ion-label>\n        </ion-item>\n      </ng-container> -->\n\n\n\n\n    </div>\n  </div>\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>lista</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div class=\"cadastro-wrapper\">\r\n\r\n    <div id=\"procurar-baba-pet\" *ngIf=\"usuarioLogado.tipoUsuario == 1\">\r\n\r\n      <ng-container *ngFor=\"let pedido of pedidos\">\r\n\r\n\r\n        <ng-container *ngFor=\"let usuario of usuarios\">\r\n          <ion-item *ngIf=\"pedido.value.baba==usuarioLogado.key && pedido.value.procurador==usuario.key\"\r\n            (click)=\"irParaContato(usuario.key);\">\r\n            <ion-avatar slot=\"start\">\r\n              <img>\r\n            </ion-avatar>\r\n            <ion-label>\r\n              <h2>Dono: {{usuario.value.nome}}</h2>\r\n              <h3>{{usuario.value.tipo}}</h3>\r\n              <p>{{usuario.value.raca}}</p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n\r\n      <!--<ion-item (click)=\"irParaContato();\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"./avatar-finn.png\">\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>Dono: Leonardo</h2>\r\n          <h3>Pássaro</h3>\r\n          <p>Coruja</p>\r\n        </ion-label>\r\n      </ion-item>-->\r\n\r\n    </div>\r\n\r\n    <div id=\"procurar-baba-pet\" *ngIf=\"usuarioLogado.tipoUsuario == 2\">\r\n\r\n      <ion-button color=\"secondary\" (click)=\"mudarVisualizacao()\">{{textoBotao}}</ion-button>\r\n      <div class=\"map-container\" [hidden]=\"textoBotao==='Mapa'\">\r\n        <div class=\"map-frame\">\r\n          <div id=\"map\"></div>\r\n        </div>\r\n      </div>\r\n\r\n\r\n\r\n      <div [hidden]=\"textoBotao==='Lista'\">\r\n        <ng-container *ngFor=\"let usuario of usuarios\">\r\n          <ion-item *ngIf=\"usuario.value.tipoUsuario==1\" (click)=\"irParaContato(usuario.key);\">\r\n            <ion-avatar slot=\"start\">\r\n              <img>\r\n            </ion-avatar>\r\n            <ion-label>\r\n              <h2>{{usuario.value.nome}}</h2>\r\n              <p>{{usuario.value.tempoDisponivel}}</p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ng-container>\r\n      </div>\r\n\r\n\r\n\r\n\r\n\r\n    </div>\r\n  </div>\r\n</ion-content>");
 
 /***/ }),
 
@@ -14153,16 +14153,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
 /* harmony import */ var _raw_loader_lista_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./lista.page.html */ "pO2T");
 /* harmony import */ var _lista_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lista.page.scss */ "DXgo");
-/* harmony import */ var _services_pedido_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../services/pedido.service */ "KG2h");
-/* harmony import */ var _services_usuario_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../services/usuario.service */ "on2l");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../services/util.service */ "2Rin");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! leaflet */ "4R65");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "Bfh1");
-/* harmony import */ var _ionic_native_native_geocoder_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/native-geocoder/ngx */ "h+qT");
+/* harmony import */ var _services_cep_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../services/cep.service */ "lZ+a");
+/* harmony import */ var _services_pedido_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../services/pedido.service */ "KG2h");
+/* harmony import */ var _services_usuario_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../services/usuario.service */ "on2l");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../services/util.service */ "2Rin");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! leaflet */ "4R65");
+/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "Bfh1");
 
 
 
@@ -14176,20 +14176,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ListaPage = class ListaPage {
-    constructor(utilService, router, usuarioService, pedidoService, loadingCtrl, geolocation, nativeGeocoder) {
+    constructor(utilService, router, usuarioService, pedidoService, loadingCtrl, geolocation, cepService) {
         this.utilService = utilService;
         this.router = router;
         this.usuarioService = usuarioService;
         this.pedidoService = pedidoService;
         this.loadingCtrl = loadingCtrl;
         this.geolocation = geolocation;
-        this.nativeGeocoder = nativeGeocoder;
+        this.cepService = cepService;
         this.listaBabas = [];
         this.options = {
             useLocale: true,
             maxResults: 5
         };
-        this.LeafIcon = leaflet__WEBPACK_IMPORTED_MODULE_9__["Icon"].extend({
+        this.LeafIcon = leaflet__WEBPACK_IMPORTED_MODULE_10__["Icon"].extend({
             options: {
                 shadowUrl: '',
                 iconSize: [38, 38],
@@ -14200,66 +14200,113 @@ let ListaPage = class ListaPage {
             }
         });
         this.greenIcon = new this.LeafIcon({ iconUrl: '../../assets/marker.png' });
+        this.roxoIcon = new this.LeafIcon({ iconUrl: '../../assets/marker2.png' });
+        this.textoBotao = "Lista";
     }
-    ngAfterViewInit() {
-        this.getMyPosition();
+    mudarVisualizacao() {
+        if (this.textoBotao === "Lista") {
+            this.textoBotao = "Mapa";
+        }
+        else {
+            this.textoBotao = "Lista";
+        }
+    }
+    getDistanceFromLatLonInKm(position1, position2) {
+        "use strict";
+        var deg2rad = function (deg) { return deg * (Math.PI / 180); }, R = 6371, dLat = deg2rad(position2.lat - position1.lat), dLng = deg2rad(position2.lng - position1.lng), a = Math.sin(dLat / 2) * Math.sin(dLat / 2)
+            + Math.cos(deg2rad(position1.lat))
+                * Math.cos(deg2rad(position1.lat))
+                * Math.sin(dLng / 2) * Math.sin(dLng / 2), c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        let resultado = ((R * c * 1000));
+        if (resultado > 1000) {
+            return `${(resultado / 1000).toFixed()}km`;
+        }
+        return `${resultado.toFixed()}m`;
     }
     getMyPosition() {
         this.geolocation.getCurrentPosition().then((resp) => {
             this.lat = resp.coords.latitude;
             this.lng = resp.coords.longitude;
-            this.initMap();
         }).catch((error) => {
             console.log('Error getting location', error);
         });
     }
-    getLatLongByAddres(endereco, nome) {
-        this.nativeGeocoder.forwardGeocode(endereco, this.options)
-            .then((result) => this.listaBabas.push({ nome: nome, lat: result[0].latitude, lng: result[0].longitude }))
-            .catch((error) => console.log(error));
+    getLatLongByAddres(endereco, nome, key) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            let minha = { lat: this.lat, lng: this.lng };
+            let baba = null;
+            let usuarioBaba;
+            let latBaba = null;
+            let lngBaba = null;
+            yield this.usuarioService.getByKey(key).subscribe((result) => {
+                usuarioBaba = result;
+                latBaba = result.lat;
+                lngBaba = result.lng;
+            });
+            setTimeout(() => {
+                baba = { lat: latBaba, lng: lngBaba };
+                this.listaBabas.push({ nome: `${nome} <br>${this.getDistanceFromLatLonInKm(minha, baba)} <br> |${key}`,
+                    lat: Number(latBaba),
+                    lng: Number(lngBaba) });
+            }, 2000);
+            //this.nativeGeocoder.forwardGeocode(endereco, this.options)
+            //.then((result: NativeGeocoderResult[]) => this.listaBabas.push({nome:nome, lat:result[0].latitude, lng:result[0].longitude}))
+            //.catch((error: any) => console.log(error));
+        });
     }
     initMap() {
-        this.map = leaflet__WEBPACK_IMPORTED_MODULE_9__["map"]('map', {
+        this.map = leaflet__WEBPACK_IMPORTED_MODULE_10__["map"]('map', {
             center: [this.lat, this.lng],
-            zoom: 18
+            zoom: 14
         });
-        const tiles = leaflet__WEBPACK_IMPORTED_MODULE_9__["tileLayer"]('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        let listaPage = this;
+        const tiles = leaflet__WEBPACK_IMPORTED_MODULE_10__["tileLayer"]('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
             minZoom: 3,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a>'
         });
-        leaflet__WEBPACK_IMPORTED_MODULE_9__["marker"]([this.lat, this.lng], { icon: this.greenIcon }).addTo(this.map).bindPopup("Eu");
+        var markersLayer = leaflet__WEBPACK_IMPORTED_MODULE_10__["featureGroup"]().addTo(this.map);
+        markersLayer.on("click", function (event) {
+            var clickedMarker = event.layer;
+            console.log(clickedMarker._popup._content);
+            listaPage.irParaContato(clickedMarker._popup._content.split("|")[1]);
+        });
+        leaflet__WEBPACK_IMPORTED_MODULE_10__["marker"]([this.lat, this.lng], { icon: this.roxoIcon }).addTo(markersLayer).bindPopup("Eu");
+        for (let u of this.listaBabas) {
+            leaflet__WEBPACK_IMPORTED_MODULE_10__["marker"]([u.lat, u.lng], { icon: this.greenIcon }).addTo(markersLayer).bindPopup(u.nome);
+        }
         tiles.addTo(this.map);
     }
-    ngOnInit() {
-        this.usuarioLogado = this.utilService.getUsuarioLogado();
-        this.usuarioService.getAll().subscribe((result1) => {
-            this.usuarios = result1;
-            for (let u of this.usuarios) {
-                if (u.value.endereco) {
-                    this.getLatLongByAddres(u.value.endereco, u.value.nome);
-                }
-            }
-            this.addMarkers();
-        });
-        this.pedidoService.getAll().subscribe((result2) => {
-            this.pedidos = result2;
-        });
-        console.log("usuarios: ");
-        console.log(this.usuarios);
-        /*this.usuarioService.getAll().subscribe((data)=>{
-          let usuario:any = data[0].value;
-          //usuario.nome = "Leonardo";
-          //this.usuarioService.update(data[0].value, data[0].key);
-          console.log(data)
-        }, error=>{
-    
-        })*/
+    teste(a) {
+        alert(a);
     }
-    addMarkers() {
-        for (let baba of this.listaBabas) {
-            leaflet__WEBPACK_IMPORTED_MODULE_9__["marker"]([baba.lat, baba.lng], { icon: this.greenIcon }).addTo(this.map).bindPopup(baba.nome);
-        }
+    ngOnInit() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            this.getMyPosition();
+            this.usuarioLogado = this.utilService.getUsuarioLogado();
+            if (this.usuarioLogado.tipoUsuario == 2) {
+                yield this.usuarioService.getAll().subscribe((result1) => {
+                    this.usuarios = result1;
+                    for (let u of this.usuarios) {
+                        if (u.value.endereco && u.value.tipoUsuario != 2) {
+                            this.getLatLongByAddres(u.value.endereco, u.value.nome, u.key);
+                        }
+                    }
+                });
+                setTimeout(() => {
+                    this.initMap();
+                }, 5000);
+            }
+            else {
+                this.usuarioService.getAll().subscribe((result1) => {
+                    this.usuarios = result1;
+                });
+                this.pedidoService.getAll().subscribe((result2) => {
+                    this.pedidos = result2;
+                    console.log(result2);
+                });
+            }
+        });
     }
     irParaContato(keyUsuarioEscolhido) {
         //localStorage.setItem("usuarioEscolhido",keyUsuarioEscolhido);
@@ -14272,16 +14319,16 @@ let ListaPage = class ListaPage {
     }
 };
 ListaPage.ctorParameters = () => [
-    { type: _services_util_service__WEBPACK_IMPORTED_MODULE_6__["UtilService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
-    { type: _services_usuario_service__WEBPACK_IMPORTED_MODULE_4__["UsuarioService"] },
-    { type: _services_pedido_service__WEBPACK_IMPORTED_MODULE_3__["PedidoService"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["LoadingController"] },
-    { type: _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_10__["Geolocation"] },
-    { type: _ionic_native_native_geocoder_ngx__WEBPACK_IMPORTED_MODULE_11__["NativeGeocoder"] }
+    { type: _services_util_service__WEBPACK_IMPORTED_MODULE_7__["UtilService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
+    { type: _services_usuario_service__WEBPACK_IMPORTED_MODULE_5__["UsuarioService"] },
+    { type: _services_pedido_service__WEBPACK_IMPORTED_MODULE_4__["PedidoService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["LoadingController"] },
+    { type: _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_11__["Geolocation"] },
+    { type: _services_cep_service__WEBPACK_IMPORTED_MODULE_3__["CepService"] }
 ];
 ListaPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_7__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_8__["Component"])({
         selector: 'app-lista',
         template: _raw_loader_lista_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_lista_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]

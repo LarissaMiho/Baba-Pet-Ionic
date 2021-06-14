@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { UtilService } from '../services/util.service';
 
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.page.html',
@@ -18,6 +19,28 @@ export class CadastroPage implements OnInit {
     private usuarioService: UsuarioService, private cepService: CepService) { }
 
   ngOnInit() {
+    
+  }
+
+  buildAgressividade(){
+    let agressividades = [false, false, false, false, false];
+    return agressividades;
+  }
+  buildPorte(){
+    let portes = [false, false, false, false, false];
+    return portes;
+  }
+  buildAgitacao(){
+    let agitacao = [false, false, false, false, false];
+    return agitacao;
+  }
+  buildAtencao(){
+    let atencao = [false, false, false, false, false];
+    return atencao;
+  }
+  buildExotico(){
+    let exotico = [false, false, false, false, false];
+    return exotico;
   }
 
   serBabaPet() {
@@ -31,7 +54,11 @@ export class CadastroPage implements OnInit {
       endereco:"",
       lat:"",
       lng:"",
-
+      agressividadesSuportadas:this.buildAgressividade(),
+      portesSuportados:this.buildPorte(),
+      agitacoesSuportadas:this.buildAgitacao(),
+      atencoesSuportadas:this.buildAtencao(),
+      exoticosSuportados:this.buildExotico(),
     }
     this.tipoUsuario = 1;
     this.isCadastro = true;
@@ -44,10 +71,73 @@ export class CadastroPage implements OnInit {
       raca:"",
       dataNascimento:"",
       descricao:"",
-      observacoes:""
+      observacoes:"",
+      agressividades:this.buildAgressividade(),
+      portes:this.buildPorte(),
+      agitacoes:this.buildAgitacao(),
+      atencoes:this.buildAtencao(),
+      exoticos:this.buildExotico(),
     }
     this.tipoUsuario = 2;
     this.isCadastro = true;
+  }
+
+  rateAgressividade(index:number){
+    if(this.tipoUsuario == 1){
+      for(let i=0; i<this.usuario.agressividadesSuportadas.length; i++){
+        this.usuario.agressividadesSuportadas[i] = i<=index?true:false;
+      }
+    }else{
+      for(let i=0; i<this.usuario.agressividades.length; i++){
+        this.usuario.agressividades[i] = i<=index?true:false;
+      }
+    }
+  }
+  ratePorte(index:number){
+    if(this.tipoUsuario == 1){
+      for(let i=0; i<this.usuario.portesSuportados.length; i++){
+        this.usuario.portesSuportados[i] = i<=index?true:false;
+      }
+    }else{
+      for(let i=0; i<this.usuario.portes.length; i++){
+        this.usuario.portes[i] = i<=index?true:false;
+      }
+    }
+  }
+
+  rateAgitacao(index:number){
+    if(this.tipoUsuario == 1){
+      for(let i=0; i<this.usuario.agitacoesSuportadas.length; i++){
+        this.usuario.agitacoesSuportadas[i] = i<=index?true:false;
+      }
+    }else{
+      for(let i=0; i<this.usuario.agitacoes.length; i++){
+        this.usuario.agitacoes[i] = i<=index?true:false;
+      }
+    }
+  }
+
+  rateAtencao(index:number){
+    if(this.tipoUsuario == 1){
+      for(let i=0; i<this.usuario.atencoesSuportadas.length; i++){
+        this.usuario.atencoesSuportadas[i] = i<=index?true:false;
+      }
+    }else{
+      for(let i=0; i<this.usuario.atencoes.length; i++){
+        this.usuario.atencoes[i] = i<=index?true:false;
+      }
+    }
+  }
+  rateExotico(index:number){
+    if(this.tipoUsuario == 1){
+      for(let i=0; i<this.usuario.exoticosSuportados.length; i++){
+        this.usuario.exoticosSuportados[i] = i<=index?true:false;
+      }
+    }else{
+      for(let i=0; i<this.usuario.exoticos.length; i++){
+        this.usuario.exoticos[i] = i<=index?true:false;
+      }
+    }
   }
 
     async irParaLista(){
@@ -77,6 +167,24 @@ export class CadastroPage implements OnInit {
       console.log(this.usuario.lat);
     })
   }
+
+ /* tirarFoto(){
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64 (DATA_URL):
+    // let base64Image = 'data:image/jpeg;base64,' + imageData;
+    alert(imageData);
+    }, (err) => {
+     // Handle error
+    });
+  }*/
 
 
 

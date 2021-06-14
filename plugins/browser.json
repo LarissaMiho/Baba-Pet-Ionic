@@ -44,10 +44,19 @@
     },
     "cordova-plugin-nativegeocoder": {
       "PACKAGE_NAME": "com.baba.pet"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.baba.pet"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.baba.pet"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.baba.pet"
+    },
+    "cordova-plugin-file": {
       "PACKAGE_NAME": "com.baba.pet"
     }
   }

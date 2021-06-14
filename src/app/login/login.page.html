@@ -1,14 +1,27 @@
 <ion-header>
   <ion-toolbar class="ion-color center" [style.background-color]="toolbarColor">
-    <ion-title> BABÁ PET</ion-title>
+    <ion-title>BABÁ PET</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div id="login" class="d-flex-login">
-    <ion-icon name="logo-facebook" class="wrapper icon fb"></ion-icon>
-    <ion-icon name="logo-instagram" class="wrapper icon insta"></ion-icon>
-  </div>
+  <div style="margin-top: 15px">
+    <ion-item>
+      <ion-label position="stacked">E-mail</ion-label>
+      <ion-input type="text" [(ngModel)]="login"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Senha</ion-label>
+      <ion-input [(ngModel)]="senha"></ion-input>
+    </ion-item>
+  </div><br>
+  <div class="text-center">
+    <ion-label (click)="logar()" style="color: #2574a0">Entrar</ion-label>
+  </div><br><br>
+  <!--<div id="login" class="d-flex-login">    
+    <ion-icon name="logo-facebook" class="wrapper icon fb" (click)="logar()"></ion-icon>
+    <ion-icon name="logo-instagram" class="wrapper icon insta" (click)="logar()"></ion-icon>
+  </div>-->
   <div class="text-center">
     <ion-label (click)="irParaCadastro()" style="color: #2574a0">Cadastre-se</ion-label>
   </div>

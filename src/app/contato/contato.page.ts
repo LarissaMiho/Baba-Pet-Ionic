@@ -11,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatoPage implements OnInit {
 
+  toolbarColor = this.utilService.getToolbarColor();
+
   usuarioLogado: any;
   usuarioEscolhido: any;
   pedidos: any;
@@ -29,6 +31,7 @@ export class ContatoPage implements OnInit {
         this.data = params.key;
         this.usuarioService.getByKey(this.data).subscribe((result: any) => {
           this.usuarioEscolhido = result
+          console.log(this.usuarioEscolhido);
           this.ProcurarPedido();
         })
       }

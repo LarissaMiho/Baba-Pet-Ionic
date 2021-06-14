@@ -15,7 +15,7 @@ export class CepService {
   }
   find(endereco: string): any {
     return this.httpClient.get(
-      `${environment.API_CEP}?endereco=${endereco}`
+      `${environment.API_CEP}/${endereco}`
     );
   }
 }

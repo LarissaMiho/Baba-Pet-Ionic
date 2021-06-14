@@ -19,16 +19,16 @@ export class AppComponent {
   ];
 
   public appPagesBaba = [
-    { title: 'Lista de Pedidos', url: '/lista', icon: 'mail' },
-    { title: 'Editar Perfil', url: '/editar', icon: 'mail' },
-    { title: 'Sair', url: '/login', icon: 'mail' },
+    { title: 'Lista de Pedidos', url: '/lista', icon: 'reader' },
+    { title: 'Editar Perfil', url: '/editar', icon: 'person' },
+    { title: 'Sair', url: '/login', icon: 'play' },
   ];
 
   public appPagesProcurador = [
-    { title: 'Mapa Babá', url: '/lista', icon: 'mail' },
-    { title: 'Contato das Babás', url: '/todos-contatos', icon: 'mail' },
-    { title: 'Editar Perfil', url: '/editar', icon: 'mail' },
-    { title: 'Sair', url: '/login', icon: 'mail' },
+    { title: 'Mapa Babá', url: '/lista', icon: 'map' },
+    { title: 'Contato das Babás', url: '/todos-contatos', icon: 'people' },
+    { title: 'Editar Perfil', url: '/editar', icon: 'person' },
+    { title: 'Sair', url: '/login', icon: 'play' },
   ];
   //public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor(private router: Router, private utilService: UtilService) {
@@ -43,13 +43,18 @@ export class AppComponent {
     }else{
       this.validarLogado();
     }
+  }
 
-    
+  irParaPagina(url){
+    if (url.indexOf("login") > -1){
+      this.utilService.removeUsuarioLogado();
+    }
+    this.router.navigate([url]);
   }
 
   validarLogado() {
     if (!this.utilService.getUsuarioLogado()) {
-      this.router.navigate(["/cadastro"])
+      this.router.navigate(["/login"])
     }
   }
 

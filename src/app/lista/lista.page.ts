@@ -16,6 +16,8 @@ import { NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 })
 export class ListaPage implements OnInit {
 
+  toolbarColor = this.utilService.getToolbarColor();
+
   usuarioLogado: any;
   usuarios: any;
   pedidos: any;
@@ -40,8 +42,18 @@ export class ListaPage implements OnInit {
         popupAnchor:  [-3, -76]
     }
 });
+LeafIcon2 = L.Icon.extend({
+  options: {
+      shadowUrl: '',
+      iconSize:     [30, 45],
+      shadowSize:   [50, 64],
+      iconAnchor:   [22, 94],
+      shadowAnchor: [4, 62],
+      popupAnchor:  [-3, -76]
+  }
+});
   greenIcon = new this.LeafIcon({iconUrl: '../../assets/marker.png'});
-  roxoIcon = new this.LeafIcon({iconUrl: '../../assets/marker2.png'});
+  roxoIcon = new this.LeafIcon2({iconUrl: '../../assets/marker2.png'});
   textoBotao = "Lista";
 
   constructor(private utilService: UtilService, private router: Router,
@@ -132,7 +144,6 @@ export class ListaPage implements OnInit {
     var markersLayer = L.featureGroup().addTo(this.map);
     markersLayer.on("click", function (event) {
       var clickedMarker = event.layer;
-      console.log(clickedMarker._popup._content)
       listaPage.irParaContato(clickedMarker._popup._content.split("|")[1]);
     });
     L.marker([this.lat,this.lng],{icon:this.roxoIcon}).addTo(markersLayer).bindPopup("Eu");

@@ -7,7 +7,14 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.baba.pet"
+    },
     "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.baba.pet"
+    },
+    "cordova-plugin-file-transfer": {
       "PACKAGE_NAME": "com.baba.pet"
     },
     "cordova-plugin-facebook4": {
@@ -20,6 +27,9 @@
   },
   "dependent_plugins": {
     "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.baba.pet"
+    },
+    "cordova-plugin-file": {
       "PACKAGE_NAME": "com.baba.pet"
     }
   }

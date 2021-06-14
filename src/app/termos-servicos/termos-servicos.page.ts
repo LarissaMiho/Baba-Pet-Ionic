@@ -1,3 +1,4 @@
+import { UtilService } from './../services/util.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./termos-servicos.page.scss'],
 })
 export class TermosServicosPage implements OnInit {
+  
 
-  constructor() { }
 
+  constructor(private utilService: UtilService) { }
+
+  toolbarColor = this.utilService.getToolbarColor();
   ngOnInit() {
   }
 
