@@ -30,8 +30,7 @@ import { Camera } from '@ionic-native/camera';
     AngularFireDatabaseModule,
     HttpClientModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Geolocation, NativeGeocoder,
-  Camera],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Geolocation, NativeGeocoder],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

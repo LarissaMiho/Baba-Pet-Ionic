@@ -12,6 +12,7 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 })
 export class TodosContatosPage implements OnInit {
 
+  toolbarColor = this.utilService.getToolbarColor();
   constructor(private router: Router, private pedidoService: PedidoService,
     private utilService: UtilService, private usuarioService: UsuarioService) { }
 

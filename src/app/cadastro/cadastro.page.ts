@@ -3,7 +3,7 @@ import { UsuarioService } from './../services/usuario.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { UtilService } from '../services/util.service';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
 
 @Component({
   selector: 'app-cadastro',
@@ -16,8 +16,7 @@ export class CadastroPage implements OnInit {
   tipoUsuario = 0;
   usuario: any;
   constructor(private utilService: UtilService,  private router: Router, 
-    private usuarioService: UsuarioService, private cepService: CepService,
-    private camera: Camera) { }
+    private usuarioService: UsuarioService, private cepService: CepService) { }
 
   ngOnInit() {
     
@@ -169,7 +168,7 @@ export class CadastroPage implements OnInit {
     })
   }
 
-  tirarFoto(){
+ /* tirarFoto(){
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -185,7 +184,7 @@ export class CadastroPage implements OnInit {
     }, (err) => {
      // Handle error
     });
-  }
+  }*/
 
 
 

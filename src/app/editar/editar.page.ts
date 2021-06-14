@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editar.page.scss'],
 })
 export class EditarPage implements OnInit {
+  toolbarColor = this.utilService.getToolbarColor();
+
   usuario: any;
   key= ""; 
   constructor(private utilService: UtilService,  private router: Router, private usuarioService: UsuarioService) { 
@@ -16,6 +18,7 @@ export class EditarPage implements OnInit {
   }
 
   ngOnInit() {
+    
     this.usuario = this.utilService.getUsuarioLogado();
 
     this.key = this.usuario.key;

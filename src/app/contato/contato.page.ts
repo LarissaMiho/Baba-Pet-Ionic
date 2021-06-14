@@ -11,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatoPage implements OnInit {
 
+  toolbarColor = this.utilService.getToolbarColor();
+
   usuarioLogado: any;
   usuarioEscolhido: any;
   pedidos: any;

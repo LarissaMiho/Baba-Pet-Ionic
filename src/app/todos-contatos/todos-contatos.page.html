@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>todosContatos</ion-title>
+  <ion-toolbar class="ion-color center" [style.background-color]="toolbarColor">
+    <ion-title>BABÁ PET</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +14,7 @@
 
           <p *ngIf="pedido.value.status == 'pendente' ">Pendente</p>
           <p *ngIf="pedido.value.status == 'aceito' ">{{buscarContatoPorKey(pedido.value.baba)}}</p>
-          <p *ngIf="pedido.value.status == 'rejeitado' ">Rejeitado</p>
+          <p *ngIf="pedido.value.status == 'recusado' ">Rejeitado</p>
         </ion-label>
       </ion-item>
     </ng-container>

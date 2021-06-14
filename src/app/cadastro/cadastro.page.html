@@ -63,8 +63,10 @@
           <ion-textarea [(ngModel)]="usuario.endereco"></ion-textarea>
         </ion-item>
 
-        <ion-button color="primary" (click)="tirarFoto()">Tirar Foto do Local</ion-button>
+        <!--<ion-button color="primary" (click)="tirarFoto()">Tirar Foto do Local</ion-button>-->
 
+        <ion-label position="stacked">Marque o quanto que você atura dessas características sobre o pet. Sendo 1 estrela
+          pouco tolerante e 5 muito tolerante</ion-label>
         <ion-item>
           <ion-label position="stacked">Agressividade</ion-label>
           <div class="d-flex">
@@ -98,18 +100,24 @@
           </div>
         </ion-item>
         <ion-item>
-          <ion-label position="stacked">Exotico</ion-label>
+          <ion-label position="stacked">Exótico</ion-label>
           <div class="d-flex">
             <ion-icon name="paw-outline" [ngClass]="usuario.exoticosSuportados[i]?'selected-rating':''"
               (click)="rateExotico(i)" *ngFor="let exotico of usuario.exoticosSuportados; let i=index">
             </ion-icon>
           </div>
         </ion-item>
+        <div class="div-wrapper-choose-options">
+          <div class="text-center">
+            <ion-label class="font-color" style="line-height: 60px;" (click)="pegarCordenadas()">Cadastrar
+            </ion-label>
+          </div>
+        </div>
 
-        <div id="login" class="d-flex-vincular">
+        <!--<div id="login" class="d-flex-vincular">
           <ion-icon (click)="pegarCordenadas()" name="logo-facebook" class="wrapper icon fb"></ion-icon>
           <ion-icon (click)="pegarCordenadas()" name="logo-instagram" class="wrapper icon insta"></ion-icon>
-        </div>
+        </div>-->
 
 
       </div>
@@ -130,7 +138,7 @@
         </ion-item>
         <ion-label class="font-color ">Preencha com as informações de seu Pet</ion-label>
         <ion-item>
-          <ion-label position="stacked">Tipo</ion-label>
+          <ion-label position="stacked">Tipo (Ex: cachorro, hamster, cobra)</ion-label>
           <ion-input [(ngModel)]="usuario.tipo"></ion-input>
         </ion-item>
         <ion-item>
@@ -149,6 +157,8 @@
           <ion-label position="stacked">Observações</ion-label>
           <ion-textarea [(ngModel)]="usuario.observacoes"></ion-textarea>
         </ion-item>
+        <ion-label position="stacked">Marque o quão forte são essas caracteristicas em seu animal de estimação. Sendo 1
+          estrela pouco característico e 5 muito.</ion-label>
         <ion-item>
           <ion-label position="stacked">Agressividade</ion-label>
           <div class="d-flex">
@@ -189,10 +199,16 @@
             </ion-icon>
           </div>
         </ion-item>
-        <div id="login" class="d-flex-vincular">
+        <div class="div-wrapper-choose-options">
+          <div class="text-center">
+            <ion-label class="font-color" style="line-height: 60px;" (click)="irParaLista()">Cadastrar
+            </ion-label>
+          </div>
+        </div>
+        <!--<div id="login" class="d-flex-vincular">
           <ion-icon (click)="irParaLista()" name="logo-facebook" class="wrapper icon fb"></ion-icon>
           <ion-icon (click)="irParaLista()" name="logo-instagram" class="wrapper icon insta"></ion-icon>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>

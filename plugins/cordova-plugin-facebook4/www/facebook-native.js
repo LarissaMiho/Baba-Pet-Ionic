@@ -1,4 +1,3 @@
-cordova.define("cordova-plugin-facebook4.FacebookConnectPlugin", function(require, exports, module) {
 var exec = require('cordova/exec')
 
 exports.getLoginStatus = function getLoginStatus (s, f) {
@@ -58,5 +57,3 @@ exports.activateApp = function (s, f) {
 exports.getDeferredApplink = function (s, f) {
 	  exec(s, f, 'FacebookConnectPlugin', 'getDeferredApplink', [])
 }
-
-});
