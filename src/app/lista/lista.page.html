@@ -53,17 +53,26 @@
 
 
       <div [hidden]="textoBotao==='Lista'">
-        <ng-container *ngFor="let usuario of usuarios">
-          <ion-item *ngIf="usuario.value.tipoUsuario==1" (click)="irParaContato(usuario.key);">
-            <!--<ion-avatar slot="start">
+        <label>Filtro:</label>
+        <input id="filtro" [(ngModel)]="filtro" style="width: 100vw; background-color: transparent; border: none;">
+        <ion-spinner *ngIf="loading" name="lines" style="text-align: center; width: 100%;">
+        </ion-spinner>
+        <div *ngIf="loading == false && usuariosFiltrados != undefined">
+          <ng-container *ngFor="let usuario of usuariosFiltrados">
+            <ion-item *ngIf="usuario.value.tipoUsuario==1">
+              <!--<ion-avatar slot="start">
               <img>
             </ion-avatar>-->
-            <ion-label>
-              <h2>{{usuario.value.nome}}</h2>
-              <p>{{usuario.value.tempoDisponivel}}</p>
-            </ion-label>
-          </ion-item>
-        </ng-container>
+              <ion-label (click)="irParaContato(usuario.key);">
+                <h2>{{usuario.value.nome}}</h2>
+                <p>{{usuario.value.tempoDisponivel}} - {{usuario.value.distancia}}</p>
+              </ion-label>
+              <img src="../../assets/marker.png" style="height: 15px; width: 15px;">
+            </ion-item>
+          </ng-container>
+          <ion-button color="primary" style="width: 99%;margin: 0 auto;" (click)="carregarMais()">Carregar mais
+          </ion-button>
+        </div>
       </div>
 
 
