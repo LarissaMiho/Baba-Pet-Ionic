@@ -1,15 +1,15 @@
 export const environment = {
   production: false,
-  API_CEP: "http://64.227.81.135:5000/cep",
+  API_CEP: "http://64.227.81.135:8080/cep",
   TOKEN: "Token 70885491cf7edfcd6998d756dc8214d1",
   firebase: {
-    apiKey: "AIzaSyCrzQTMzpRJqBnuQ4XiciZfdntYqopeCEM",
-    authDomain: "babapet-a8832.firebaseapp.com",
-    databaseURL: "https://babapet-a8832-default-rtdb.firebaseio.com",
-    projectId: "babapet-a8832",
-    storageBucket: "babapet-a8832.appspot.com",
-    messagingSenderId: "633728017410",
-    appId: "1:633728017410:web:5403e759db46542672731b",
-    measurementId: "G-470YW2KXGB"
+    apiKey: "AIzaSyBYUeUixyGwm4tFpseuJ7t6bAC6_pjV2ww",
+    authDomain: "baba-2-9b627.firebaseapp.com",
+    databaseURL: "https://baba-2-9b627-default-rtdb.firebaseio.com",
+    projectId: "baba-2-9b627",
+    storageBucket: "baba-2-9b627.appspot.com",
+    messagingSenderId: "491829989489",
+    appId: "1:491829989489:web:c6d06dc82e71457d78cbd0",
+    measurementId: "G-VYRLNG92DQ"
   }
 };
